@@ -5,6 +5,13 @@ terraform {
   }
 }
 
+provider "azurerm" {
+  # The "feature" block is required for AzureRM provider 2.x.
+  # If you are using version 1.x, the "features" block is not allowed.
+  version = "~>2.0"
+  features {}
+}
+
 variable "resource_group_name" {
   default = "tailspin-space-game-rg"
   description = "The name of the resource group"
